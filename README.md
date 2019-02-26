@@ -19,3 +19,7 @@ bstyle -t path/to/source/directory1 -t path/to/source/directory2 -s FavoriteStyl
 ```
 
 
+
+## NOTE:
+
+If there is incorrect astyle options for a certain style, please add a issue or send me a pull request **with relevent references**.
