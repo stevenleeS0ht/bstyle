@@ -1,0 +1,61 @@
+#! /bin/sh
+
+PROG="bstyle"
+
+USAGE="${PROG} -h | -t TARGET -s STYLE"
+
+TARGET=""
+
+while getopts 'ht:s:' OPT;
+do
+  case $OPT in
+    h)
+      echo "${USAGE}"
+      exit
+      ;;
+    t)
+      TARGET="$TARGET $OPTARG"
+      ;;
+    s)
+      STYLE="$OPTARG"
+      ;;
+    *)
+      echo "Invalid Flags"
+      echo "${USAGE}"
+      exit
+      ;; 
+  esac
+
+done
+
+# Style:
+
+QT_STYLE=" \
+--style=kr \
+--indent=spaces=4 \
+--align-pointer=name \
+--align-reference=name \
+--convert-tabs \
+--attach-namespaces \
+--max-code-length=100 \
+--max-instatement-indent=120 \
+--pad-header \
+--pad-oper \
+"
+
+ADDITIONAL_OPTIONS=""
+
+case $STYLE in
+  qt)
+    ADDITIONAL_OPTIONS=$QT_STYLE
+    ;;
+  *)
+    exit
+    ;;
+esac
+
+astyle -R -n ${ADDITIONAL_OPTIONS} $TARGET
+
+exit
+
+
