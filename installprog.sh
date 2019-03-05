@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# License: GPL-v3
+# Author: Steven Lee
+# Email: shuangjianlee123@protonmail.com
+
 _here=$(dirname "$0")
 
 PROG="bstyle"
