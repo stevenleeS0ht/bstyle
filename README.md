@@ -1,6 +1,13 @@
 # bstyle:
 a high level wrapper of astyle.
 
+## Advantage over alias:
+|Aspect|bstyle|alias|
+|---|---|---|
+|deploy|single line command|config all bashrc manually|
+|use|more clear cli-opts|you have to obey original cli-opts layout|
+
+
 ## Installation:
 
 Type the following command in shell.
@@ -28,3 +35,4 @@ It currently doesn't support formating all directory recursively, but it will be
 ## NOTE:
 
 If there is incorrect astyle options for a certain style, please add a issue or send me a pull request **with relevent references**.
+
