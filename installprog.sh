@@ -1,6 +1,6 @@
 #! /bin/sh
 
-_here=$(dirname $0)
+_here=$(dirname "$0")
 
 PROG="bstyle"
 
