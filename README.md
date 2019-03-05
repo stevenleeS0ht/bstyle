@@ -12,12 +12,17 @@ cd path/to/source
 
 ## Usage:
 
-To convert a file or a whole directory of C-like source code:
+To convert a file of C-like source code:
 
 ```bash
-bstyle -t path/to/source/directory1 -t path/to/source/directory2 -s FavoriteStyle
+bstyle -t path/to/source/targetfile1 -t path/to/source/targetfile2 -s FavoriteStyle
 ```
 
+It currently doesn't support formating all directory recursively, but it will be implemented soon.
+
+## Support Style:
+1. Qt
+2. Linux
 
 
 ## NOTE:
