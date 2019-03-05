@@ -6,15 +6,21 @@
 
 PROG="bstyle"
 
-USAGE="${PROG} -h | -t TARGET -s STYLE"
+USAGE="${PROG} -l | -h | -t TARGET -s STYLE"
+
+SUPPORTED_STYLES="qt -> Qt; linux -> Linux Kernel"
 
 TARGET=""
 
-while getopts 'ht:s:' OPT;
+while getopts 'lht:s:' OPT;
 do
   case $OPT in
     h)
       echo "${USAGE}"
+      exit
+      ;;
+    l)
+      echo "${SUPPORTED_STYLES}"
       exit
       ;;
     t)
@@ -52,8 +58,6 @@ case $STYLE in
     exit
     ;;
 esac
-
-
 
 _full_command="astyle -n ${ADDITIONAL_OPTIONS} ${TARGET}"
 
