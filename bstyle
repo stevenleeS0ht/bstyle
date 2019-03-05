@@ -6,15 +6,21 @@
 
 PROG="bstyle"
 
-USAGE="${PROG} -l | -h | -t TARGET -s STYLE"
+USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
+
+VERSION='0.1.0'
 
 SUPPORTED_STYLES="qt -> Qt; linux -> Linux Kernel"
 
 TARGET=""
 
-while getopts 'lht:s:' OPT;
+while getopts 'vlht:s:' OPT;
 do
   case $OPT in
+    v)
+      echo "${VERSION}"
+      exit
+      ;;
     h)
       echo "${USAGE}"
       exit
