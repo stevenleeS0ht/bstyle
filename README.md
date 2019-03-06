@@ -25,7 +25,13 @@ To convert a file of C-like source code:
 bstyle -t path/to/source/targetfile1 -t path/to/source/targetfile2 -s FavoriteStyle
 ```
 
-It currently doesn't support formating all directory recursively, but it will be implemented soon.
+It currently doesn't support formating all directory recursively, but there is alternative way to implement that.
+
+### Format all files recursively with assistence of findutils
+
+```bash
+find path/to/your/project -type f -name \*.xxx -exec bstyle -s STYLE -t {} \;
+```
 
 ## Support Style:
 1. Qt
