@@ -34,11 +34,13 @@ find path/to/your/project -type f -name \*.xxx -exec bstyle -s STYLE -t {} \;
 ```
 
 ## Support Style:
-1. 
+ 
 [Qt]:(https://wiki.qt.io/Qt_Coding_Style)
-2. 
+
+
 [Linux]:(https://www.kernel.org/doc/html/v4.10/_sources/process/coding-style.txt)
-3. 
+
+
 [Google]:(https://google.github.io/styleguide/cppguide.html)
 
 
