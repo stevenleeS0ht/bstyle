@@ -12,6 +12,6 @@ _destdir=$1
 
 install -d "$_destdir/bin"
 
-install -m755 "${_here}/${PROG}"
+install -m755 "${_here}/${PROG}" "$_destdir/bin/"
 
 exit
