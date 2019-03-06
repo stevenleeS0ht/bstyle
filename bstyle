@@ -10,7 +10,7 @@ USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
 
 VERSION='0.1.0'
 
-SUPPORTED_STYLES="qt -> Qt; linux -> Linux Kernel"
+SUPPORTED_STYLES="qt -> Qt (C++); linux -> Linux Kernel (C); google -> Google C++ (C)"
 
 TARGET=""
 
@@ -47,27 +47,48 @@ done
 # Style:
 
 QT_STYLE="\
---style=kr \
---indent=spaces=4 \
 --align-pointer=name \
 --align-reference=name \
---convert-tabs \
+--attach-closing-while \
 --attach-namespaces \
+--attach-return-type-decl \
+--break-blocks \
+--convert-tabs \
+--indent=spaces=4 \
 --max-code-length=100 \
 --max-instatement-indent=120 \
---pad-header \
+--pad-header \ 
 --pad-oper \
---break-blocks"
+--style=kr"
 
 LINUX_STYLE="\
---style=linux \
---indent=force-tab=8 \
 --align-pointer=name \
---max-code-length=90 \
+--attach-return-type-decl \
 --break-after-logical \
+--indent=force-tab=8 \
+--max-code-length=90 \
 --pad-header \
 --pad-oper \
+--style=linux \
 --unpad-paren"
+
+GOOGLE_STYLE="\
+--align-pointer=type \
+--align-reference=type \
+--attach-classes \
+--attach-closing-while \
+--attach-extern-c \
+--attach-namespaces \
+--attach-return-type-decl \
+--break-after-logical \
+--break-blocks \
+--convert-tabs \
+--indent=space=2 \
+--max-code-length=80 \
+--pad-comma \
+--pad-header \
+--pad-oper \
+--style=google"
 
 
 ADDITIONAL_OPTIONS=""
@@ -78,6 +99,9 @@ case $STYLE in
     ;;
   linux)
     ADDITIONAL_OPTIONS=$LINUX_STYLE
+    ;;
+  google)
+    ADDITIONAL_OPTIONS=$GOOGLE_STYLE
     ;;
   *)
     exit
