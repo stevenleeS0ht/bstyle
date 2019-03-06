@@ -46,9 +46,28 @@ done
 
 # Style:
 
-QT_STYLE="--style=kr --indent=spaces=4 --align-pointer=name --align-reference=name --convert-tabs --attach-namespaces --max-code-length=100 --max-instatement-indent=120 --pad-header --pad-oper"
+QT_STYLE="\
+--style=kr \
+--indent=spaces=4 \
+--align-pointer=name \
+--align-reference=name \
+--convert-tabs \
+--attach-namespaces \
+--max-code-length=100 \
+--max-instatement-indent=120 \
+--pad-header \
+--pad-oper \
+--break-blocks"
 
-LINUX_STYLE="--style=linux --indent=force-tab=8 --align-pointer=name --max-code-length=90 --break-after-logical --pad-header --pad-oper --unpad-paren"
+LINUX_STYLE="\
+--style=linux \
+--indent=force-tab=8 \
+--align-pointer=name \
+--max-code-length=90 \
+--break-after-logical \
+--pad-header \
+--pad-oper \
+--unpad-paren"
 
 
 ADDITIONAL_OPTIONS=""
