@@ -36,6 +36,7 @@ find path/to/your/project -type f -name \*.xxx -exec bstyle -s STYLE -t {} \;
 ## Support Style:
 1. Qt
 2. Linux
+3. Google
 
 
 ## NOTE:
