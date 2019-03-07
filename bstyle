@@ -110,8 +110,6 @@ esac
 
 _full_command="astyle -n ${ADDITIONAL_OPTIONS} ${TARGET}"
 
-echo ${_full_command}
-
 ${_full_command}
 
 exit
