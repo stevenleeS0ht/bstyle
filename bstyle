@@ -10,7 +10,7 @@ USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
 
 VERSION='0.1.0'
 
-SUPPORTED_STYLES="qt -> Qt (C++); linux -> Linux Kernel (C); google -> Google C++ (C)"
+SUPPORTED_STYLES="qt -> Qt (C++); linux -> Linux Kernel (C); google -> Google C++ (C++)"
 
 TARGET=""
 
@@ -47,6 +47,7 @@ done
 # Style:
 
 QT_STYLE="\
+--style=kr \
 --align-pointer=name \
 --align-reference=name \
 --attach-closing-while \
@@ -59,7 +60,7 @@ QT_STYLE="\
 --max-instatement-indent=120 \
 --pad-header \ 
 --pad-oper \
---style=kr"
+"
 
 LINUX_STYLE="\
 --align-pointer=name \
