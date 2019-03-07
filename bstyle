@@ -8,13 +8,13 @@ PROG="bstyle"
 
 USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
 
-VERSION='0.1.0'
+VERSION='0.2.0'
 
 SUPPORTED_STYLES="qt -> Qt (C++); linux -> Linux Kernel (C); google -> Google C++ (C++)"
 
 TARGET=""
 
-while getopts 'vlht:s:' OPT;
+while getopts "vlht:s:" OPT;
 do
   case $OPT in
     v)
@@ -47,7 +47,6 @@ done
 # Style:
 
 QT_STYLE="\
---style=kr \
 --align-pointer=name \
 --align-reference=name \
 --attach-closing-while \
@@ -58,9 +57,9 @@ QT_STYLE="\
 --indent=spaces=4 \
 --max-code-length=100 \
 --max-instatement-indent=120 \
---pad-header \ 
+--pad-header \
 --pad-oper \
-"
+--style=kr"
 
 LINUX_STYLE="\
 --align-pointer=name \
@@ -110,6 +109,8 @@ case $STYLE in
 esac
 
 _full_command="astyle -n ${ADDITIONAL_OPTIONS} ${TARGET}"
+
+echo ${_full_command}
 
 ${_full_command}
 
