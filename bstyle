@@ -10,7 +10,7 @@ USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
 
 VERSION='0.2.0'
 
-SUPPORTED_STYLES="qt -> Qt (C++); linux -> Linux Kernel (C); google -> Google C++ (C++)"
+SUPPORTED_STYLES="qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google-c++ -> Google C++ (C++)"
 
 TARGET=""
 
@@ -83,7 +83,7 @@ GOOGLE_STYLE="\
 --break-after-logical \
 --break-blocks \
 --convert-tabs \
---indent=space=2 \
+--indent=spaces=2 \
 --max-code-length=80 \
 --pad-comma \
 --pad-header \
@@ -100,7 +100,7 @@ case $STYLE in
   linux)
     ADDITIONAL_OPTIONS=$LINUX_STYLE
     ;;
-  google)
+  google|google-c++)
     ADDITIONAL_OPTIONS=$GOOGLE_STYLE
     ;;
   *)
