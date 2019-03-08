@@ -6,21 +6,16 @@
 
 PROG="bstyle"
 
-USAGE="${PROG} -v | -l | -h | -t TARGET -s STYLE"
+USAGE="${PROG} -l | -h | -t TARGET -s STYLE"
 
-VERSION='0.2.0'
 
-SUPPORTED_STYLES="qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google-c++ -> Google C++ (C++)"
+SUPPORTED_STYLES="qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google|google-c++ -> Google C++ (C++)"
 
 TARGET=""
 
-while getopts "vlht:s:" OPT;
+while getopts "lht:s:" OPT;
 do
   case $OPT in
-    v)
-      echo "${VERSION}"
-      exit
-      ;;
     h)
       echo "${USAGE}"
       exit
@@ -49,8 +44,6 @@ done
 QT_STYLE="\
 --align-pointer=name \
 --align-reference=name \
---attach-closing-while \
---attach-namespaces \
 --attach-return-type-decl \
 --break-blocks \
 --convert-tabs \
@@ -72,13 +65,9 @@ LINUX_STYLE="\
 --style=linux \
 --unpad-paren"
 
-GOOGLE_STYLE="\
+GOOGLE_CPP_STYLE="\
 --align-pointer=type \
 --align-reference=type \
---attach-classes \
---attach-closing-while \
---attach-extern-c \
---attach-namespaces \
 --attach-return-type-decl \
 --break-after-logical \
 --break-blocks \
@@ -91,17 +80,34 @@ GOOGLE_STYLE="\
 --style=google"
 
 
+GOOGLE_JAVA_STYLE="\
+--attach-return-type-decl \
+--break-blocks \
+--convert-tabs \
+--indent=spaces=2 \
+--max-code-length=100 \
+--mode=java \
+--pad-comma \
+--pad-header \
+--pad-oper \
+--style=java \
+--unpad-paren"
+
+
 ADDITIONAL_OPTIONS=""
 
 case $STYLE in
-  qt)
+  qt|qt-c++)
     ADDITIONAL_OPTIONS=$QT_STYLE
     ;;
   linux)
     ADDITIONAL_OPTIONS=$LINUX_STYLE
     ;;
   google|google-c++)
-    ADDITIONAL_OPTIONS=$GOOGLE_STYLE
+    ADDITIONAL_OPTIONS=$GOOGLE_CPP_STYLE
+    ;;
+  google-java)
+    ADDITIONAL_OPTIONS=$GOOGLE_JAVA_STYLE
     ;;
   *)
     exit
