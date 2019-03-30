@@ -39,6 +39,13 @@ do
 
 done
 
+
+if [ "$TARGET" = "" ]; then
+  echo "${USAGE}"
+  exit
+fi
+
+
 # Style:
 
 NICE_C_STYLE="\
