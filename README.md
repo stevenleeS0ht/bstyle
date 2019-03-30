@@ -34,17 +34,23 @@ find path/to/your/project -type f -name \*.xxx -exec bstyle -s STYLE -t {} \;
 ```
 
 ## Support Style:
+
+- Nice C - Most readable C style as far as personal view.
+
+
+- Nice C++ - Most readable C++ style as far as personal view.
+
  
-1. [Qt C++](https://wiki.qt.io/Qt_Coding_Style)
+- [Qt C++](https://wiki.qt.io/Qt_Coding_Style)
 
 
-2. [Linux](https://www.kernel.org/doc/html/v4.10/_sources/process/coding-style.txt)
+- [Linux](https://www.kernel.org/doc/html/v4.10/_sources/process/coding-style.txt)
 
 
-3. [Google C++](https://google.github.io/styleguide/cppguide.html)
+- [Google C++](https://google.github.io/styleguide/cppguide.html)
 
 
-4. [Google Java](https://google.github.io/styleguide/javaguide.html)
+- [Google Java](https://google.github.io/styleguide/javaguide.html)
 
 
 ## NOTE:
