@@ -9,7 +9,7 @@ PROG="bstyle"
 USAGE="${PROG} -l | -h | -t TARGET -s STYLE"
 
 
-SUPPORTED_STYLES="qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google|google-c++ -> Google C++ (C++)"
+SUPPORTED_STYLES="nice|nice-c -> Nice C (C); nice-c++ -> Nice C++ (C++); qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google|google-c++ -> Google C++ (C++)"
 
 TARGET=""
 
@@ -41,6 +41,21 @@ done
 
 # Style:
 
+NICE_C_STYLE="\
+--align-pointer=name \
+--align-reference=name \
+--attach-return-type-decl \
+--break-blocks \
+--convert-tabs \
+--indent=spaces=4 \
+--max-code-length=80 \
+--max-instatement-indent=120 \
+--pad-header \
+--pad-oper \
+--style=allman"
+
+NICE_CXX_STYLE=$NICE_C_STYLE
+
 QT_STYLE="\
 --align-pointer=name \
 --align-reference=name \
@@ -65,7 +80,7 @@ LINUX_STYLE="\
 --style=linux \
 --unpad-paren"
 
-GOOGLE_CPP_STYLE="\
+GOOGLE_CXX_STYLE="\
 --align-pointer=type \
 --align-reference=type \
 --attach-return-type-decl \
@@ -97,6 +112,12 @@ GOOGLE_JAVA_STYLE="\
 ADDITIONAL_OPTIONS=""
 
 case $STYLE in
+  nice|nice-c)
+    ADDITIONAL_OPTIONS=$NICE_C_STYLE
+    ;;
+  nice-c++)
+    ADDITIONAL_OPTIONS=$NICE_CXX_STYLE
+    ;;
   qt|qt-c++)
     ADDITIONAL_OPTIONS=$QT_STYLE
     ;;
@@ -104,7 +125,7 @@ case $STYLE in
     ADDITIONAL_OPTIONS=$LINUX_STYLE
     ;;
   google|google-c++)
-    ADDITIONAL_OPTIONS=$GOOGLE_CPP_STYLE
+    ADDITIONAL_OPTIONS=$GOOGLE_CXX_STYLE
     ;;
   google-java)
     ADDITIONAL_OPTIONS=$GOOGLE_JAVA_STYLE
