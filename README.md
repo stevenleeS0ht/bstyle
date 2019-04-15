@@ -25,6 +25,18 @@ To convert a file of C-like source code:
 bstyle -t path/to/source/targetfile1 -t path/to/source/targetfile2 -s FavoriteStyle
 ```
 
+To List all avaliable styles:
+
+```bash
+bstyle -l
+```
+
+Output:
+
+```
+nice|nice-c -> Nice C (C); nice-c++ -> Nice C++ (C++); qt|qt-c++ -> Qt (C++); linux -> Linux Kernel (C); google|google-c++ -> Google C++ (C++)
+```
+
 It currently doesn't support formating all directory recursively, but there is alternative way to implement that.
 
 ### Format all files recursively with assistence of findutils
